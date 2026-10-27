@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DMG Research Hub</title>
+<meta name="description" content="Open trials, new papers, data resources, funders and literature for H3 K27M altered diffuse midline glioma.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0;font:14px system-ui,-apple-system,'Segoe UI',sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single column reading width, with a sticky section nav and dense data rows for trials. */
+:root {
+  --bg:#FBFAF8; --surface:#FFFFFF; --fg:#16181D; --muted:#5A6170; --line:#E2E1DC;
+  --accent:#2F4C6B; --accent-soft:#E8EDF2; --ok:#2E6B4F; --warn:#8A5B14;
+  --font-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --font-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#13151A; --surface:#1B1E25; --fg:#ECEDF0; --muted:#9BA3B2; --line:#2B2F39;
+    --accent:#8FB4D8; --accent-soft:#222B36; --ok:#6FC79B; --warn:#D8A85A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#13151A; --surface:#1B1E25; --fg:#ECEDF0; --muted:#9BA3B2; --line:#2B2F39;
+  --accent:#8FB4D8; --accent-soft:#222B36; --ok:#6FC79B; --warn:#D8A85A; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); line-height:1.55; }
+body::before { content:""; position:fixed; inset:0 0 auto; height: env(safe-area-inset-top, 0px); z-index:10; background: var(--bg); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.masthead { padding-block: 40px 20px; border-bottom:1px solid var(--line); }
+h1 { font-family: var(--font-display); font-weight:600; font-size: clamp(2rem, 5vw, 3rem); line-height:1.1; margin:0 0 10px; text-wrap: balance; letter-spacing:-0.01em; }
+.lede { font-family: var(--font-display); font-size: clamp(1.05rem,2.4vw,1.25rem); color: var(--fg); max-width: 62ch; margin:0 0 16px; }
+.standfirst { color: var(--muted); font-size:0.9rem; max-width:70ch; }
+nav.sections { position: sticky; top: env(safe-area-inset-top, 0px); z-index:9; background: var(--bg); border-bottom:1px solid var(--line); }
+nav.sections .wrap { display:flex; gap:18px; overflow-x:auto; padding-block:12px; }
+nav.sections a { color: var(--muted); text-decoration:none; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap; }
+nav.sections a:hover, nav.sections a:focus-visible { color: var(--accent); }
+section.block { padding-block: 44px; border-bottom:1px solid var(--line); }
+h2 { font-family: var(--font-display); font-weight:600; font-size: clamp(1.5rem,3.5vw,2rem); margin:0 0 6px; letter-spacing:-0.01em; }
+h3 { font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--muted); margin:28px 0 12px; font-weight:600; }
+p.note { color: var(--muted); max-width:70ch; margin:0 0 20px; font-size:0.95rem; }
+.controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:18px; }
+button.chip { font:inherit; font-size:0.84rem; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background: var(--surface); color: var(--muted); cursor:pointer; }
+button.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight:600; }
+input[type="search"] { font:inherit; font-size:0.9rem; padding:7px 12px; border-radius:8px; border:1px solid var(--line); background: var(--surface); color: var(--fg); min-width:min(260px, 100%); flex:1; }
+.tablewrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; background: var(--surface); }
+table { border-collapse: collapse; width:100%; font-size:0.9rem; }
+th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font-size:0.74rem; letter-spacing:0.07em; text-transform:uppercase; color: var(--muted); font-weight:600; white-space:nowrap; }
+tbody tr:last-child td { border-bottom:0; }
+td.name { min-width:230px; }
+td.name small { display:block; color: var(--muted); font-size:0.82rem; margin-top:3px; }
+a.nct { font-family: var(--font-mono); font-size:0.82rem; color: var(--accent); text-decoration:none; white-space:nowrap; }
+a.nct:hover { text-decoration: underline; }
+.status { font-size:0.78rem; font-weight:600; white-space:nowrap; }
+.status.rec { color: var(--ok); }
+.status.nyr { color: var(--warn); }
+.count { color: var(--muted); font-size:0.85rem; }
+.empty { color: var(--muted); font-size:0.9rem; padding:16px 14px; display:block; }
+td.empty { display:table-cell; }
+.rlist, .plist { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.rlist { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.rlist a { display:block; min-width:0; padding:14px 16px; border:1px solid var(--line); border-radius:12px; background: var(--surface); text-decoration:none; color:inherit; height:100%; }
+.rlist a:hover { border-color: var(--accent); }
+.rname { display:block; font-weight:600; color: var(--accent); margin-bottom:4px; }
+.rdesc { display:block; color: var(--muted); font-size:0.88rem; }
+.plist a { display:block; min-width:0; text-decoration:none; color:inherit; padding:9px 0; border-bottom:1px dotted var(--line); }
+.plist li:last-child a { border-bottom:0; }
+.ptitle { display:block; }
+.plist a:hover .ptitle { color: var(--accent); }
+.pmeta { display:block; color: var(--muted); font-size:0.84rem; font-variant-numeric: tabular-nums; margin-top:2px; }
+footer { padding-block: 32px 56px; color: var(--muted); font-size:0.86rem; }
+footer p { max-width:72ch; }
+a { color: var(--accent); }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+</style>
+
+<header class="masthead"><div class="wrap">
+<h1>DMG Research Hub</h1>
+<p class="lede">Open trials, data resources and primary literature for H3 K27M altered diffuse midline glioma, kept in one place.</p>
+<p class="standfirst">Compiled by Arun Kumar Anguraj Vadivel, Molecular Medicine, SPARC Innovation Hub, The Hospital for Sick Children, Toronto. Trials and newly published papers refresh automatically each day from ClinicalTrials.gov and PubMed; the curated sections are reviewed by hand. Page built 26 October 2026. This page is a research reference, not medical advice; treatment decisions belong with a patient's own care team.</p>
+</div></header>
+
+<nav class="sections"><div class="wrap">
+<a href="#resources">Data and resources</a><a href="#latest">New papers</a><a href="#grants">Grants and foundations</a><a href="#trials">Open trials</a><a href="#archives">Preprints and blogs</a><a href="#literature">Literature</a><a href="#about">About</a>
+</div></nav>
+
+<section class="block" id="resources"><div class="wrap">
+<h2>Data and resources</h2>
+<p class="note">Where DMG tissue, molecular data and reference material actually live. Access terms differ: some are open, some controlled, and some require a project application.</p>
+<section class="rgroup"><h3>Tissue, genomics and clinical data</h3><ul class="rlist"><li><a href="https://cbtn.org/" target="_blank" rel="noopener"><span class="rname">Children's Brain Tumor Network (CBTN)</span><span class="rdesc">Specimens, clinical annotation and harmonized sequencing from member institutions; request access through the CBTN platform.</span></a></li><li><a href="https://kidsfirstdrc.org/" target="_blank" rel="noopener"><span class="rname">Kids First Data Resource Center</span><span class="rdesc">Hosts the CBTN dataset and other pediatric cohorts for cloud analysis.</span></a></li><li><a href="https://d3b.center/our-research/pedcbioportal/" target="_blank" rel="noopener"><span class="rname">PedcBioPortal</span><span class="rdesc">Browser for pediatric cancer genomics, including OpenPBTA and CBTN cohorts.</span></a></li><li><a href="https://datacatalog.ccdi.cancer.gov/" target="_blank" rel="noopener"><span class="rname">Childhood Cancer Data Catalog</span><span class="rdesc">Index of childhood cancer datasets and the access route for each.</span></a></li></ul></section><section class="rgroup"><h3>Proteomics and molecular archives</h3><ul class="rlist"><li><a href="https://pdc.cancer.gov/" target="_blank" rel="noopener"><span class="rname">Proteomic Data Commons</span><span class="rdesc">CPTAC proteogenomic data, including the pediatric brain tumor cohort.</span></a></li><li><a href="https://www.ebi.ac.uk/pride/" target="_blank" rel="noopener"><span class="rname">PRIDE</span><span class="rdesc">ProteomeXchange archive for raw and processed mass spectrometry data.</span></a></li><li><a href="https://ega-archive.org/" target="_blank" rel="noopener"><span class="rname">European Genome-phenome Archive</span><span class="rdesc">Controlled access archive for human sequence and molecular data.</span></a></li><li><a href="https://www.proteinatlas.org/" target="_blank" rel="noopener"><span class="rname">Human Protein Atlas</span><span class="rdesc">Tissue, subcellular and single cell type protein localization references.</span></a></li></ul></section><section class="rgroup"><h3>Models, dependencies and classifiers</h3><ul class="rlist"><li><a href="https://depmap.org/portal/" target="_blank" rel="noopener"><span class="rname">DepMap</span><span class="rdesc">Cancer dependency maps, including the pediatric dependency panel.</span></a></li><li><a href="https://www.molecularneuropathology.org/mnp/" target="_blank" rel="noopener"><span class="rname">Molecular Neuropathology classifier</span><span class="rdesc">DNA methylation based CNS tumor classification, including the DMG K27 class.</span></a></li></ul></section><section class="rgroup"><h3>Consortia, registries and families</h3><ul class="rlist"><li><a href="https://chadtough.org/" target="_blank" rel="noopener"><span class="rname">ChadTough Defeat DMG Foundation</span><span class="rdesc">Research funding, the DMG ACT advocacy effort, and the My DIPG Navigator support service for families.</span></a></li><li><a href="https://thecurestartsnow.org/" target="_blank" rel="noopener"><span class="rname">The Cure Starts Now</span><span class="rdesc">Funds DIPG and DMG research internationally and convenes the DIPG/DMG Collaborative.</span></a></li><li><a href="https://dipgcollaborative.org/" target="_blank" rel="noopener"><span class="rname">DIPG/DMG Collaborative</span><span class="rdesc">Pooled funding partnership of family foundations supporting DIPG and DMG research worldwide.</span></a></li><li><a href="https://dipg.org/research/overview/" target="_blank" rel="noopener"><span class="rname">DIPG.org research overview</span><span class="rdesc">Plain language summaries of current DIPG research directions for families and clinicians.</span></a></li><li><a href="https://defeatdipg.org/current-research/" target="_blank" rel="noopener"><span class="rname">Michael Mosier Defeat DIPG Foundation</span><span class="rdesc">Grants to DIPG research programs, including early support for ONC201 development.</span></a></li></ul></section>
+</div></section>
+
+<section class="block" id="latest"><div class="wrap">
+<h2>New papers</h2>
+<p class="note">Everything indexed on PubMed in the last weeks matching diffuse midline glioma, diffuse intrinsic pontine glioma or H3K27M, newest first, added automatically each day. This is a raw feed: case reports and reviews sit beside primary research, and nothing here has been filtered for quality.</p>
+<ul class="plist" id="feed"><li class="empty">Loading the feed.</li></ul>
+<p class="note" id="stamp" style="margin-top:14px"></p>
+</div></section>
+
+<section class="block" id="grants"><div class="wrap">
+<h2>Grants and foundations</h2>
+<p class="note">Where DMG specific research money comes from, and the Canadian brain tumour funders that also support this work. Deadlines move each year, so check each call directly.</p>
+<section class="rgroup"><h3>Disease specific foundations</h3><ul class="rlist"><li><a href="https://dipgcollaborative.org/" target="_blank" rel="noopener"><span class="rname">DIPG/DMG Collaborative</span><span class="rdesc">Joint grant calls funded by a coalition of family foundations; the largest dedicated DIPG and DMG funder.</span></a></li><li><a href="https://thecurestartsnow.org/research/research-and-grants/" target="_blank" rel="noopener"><span class="rname">The Cure Starts Now research grants</span><span class="rdesc">Open calls for DIPG, DMG and homerun cancer research, with international chapters.</span></a></li><li><a href="https://chadtough.org/chadtough-defeat-dipg-award/" target="_blank" rel="noopener"><span class="rname">ChadTough Defeat DMG Foundation awards</span><span class="rdesc">New investigator and fellowship awards in DIPG and DMG research.</span></a></li><li><a href="https://defeatdipg.org/current-research/" target="_blank" rel="noopener"><span class="rname">Michael Mosier Defeat DIPG Foundation</span><span class="rdesc">Project grants to DIPG research programs.</span></a></li></ul></section><section class="rgroup"><h3>Canadian and general brain tumour funding</h3><ul class="rlist"><li><a href="https://www.braintumour.ca/grants/" target="_blank" rel="noopener"><span class="rname">Brain Tumour Foundation of Canada grants</span><span class="rdesc">Annual brain tumour research grant competition with published guidelines.</span></a></li><li><a href="https://cancerresearchsociety.ca/funding-programs/brain-cancer-research-grants/" target="_blank" rel="noopener"><span class="rname">Cancer Research Society brain cancer grants</span><span class="rdesc">Targeted Canadian funding stream for brain cancer research.</span></a></li><li><a href="https://www.canadahelps.org/en/charities/braincancercanada/" target="_blank" rel="noopener"><span class="rname">Brain Cancer Canada</span><span class="rdesc">Canadian charity funding brain cancer research; profile and donation page.</span></a></li></ul></section>
+</div></section>
+
+<section class="block" id="trials"><div class="wrap">
+<h2>Open trials</h2>
+<p class="note">Interventional studies open or opening to accrual that list diffuse midline glioma or diffuse intrinsic pontine glioma among their conditions. Each row links to its ClinicalTrials.gov record, which is the authoritative source for eligibility and sites.</p>
+<div class="controls" id="filters"></div>
+<div class="controls"><input type="search" id="q" placeholder="Search by agent, sponsor or NCT number" aria-label="Search trials"><span class="count" id="count"></span></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Study</th><th>Phase</th><th>Approach</th><th>Sponsor</th><th>Status</th><th>Record</th></tr></thead>
+<tbody id="rows"><tr><td colspan="6" class="empty">Loading the trial table.</td></tr></tbody>
+</table></div>
+<p class="note" style="margin-top:14px">The full, live list is at <a href="https://clinicaltrials.gov/search?cond=Diffuse%20Midline%20Glioma&aggFilters=status:rec%20not" target="_blank" rel="noopener">ClinicalTrials.gov</a>, which held 51 interventional DMG or DIPG studies recruiting or about to recruit when this page was last reviewed.</p>
+</div></section>
+
+<section class="block" id="archives"><div class="wrap">
+<h2>Preprints and blogs</h2>
+<p class="note">Work that has not been through a journal yet, and the places where people write about the field between papers. Preprints are not peer reviewed; read them as claims rather than conclusions.</p>
+<section class="rgroup"><h3>Preprints and unpublished work</h3><ul class="rlist"><li><a href="https://www.biorxiv.org/" target="_blank" rel="noopener"><span class="rname">bioRxiv</span><span class="rdesc">Search “diffuse midline glioma” for preprints of primary research. Note that bioRxiv does not accept opinion or narrative review pieces.</span></a></li><li><a href="https://www.medrxiv.org/" target="_blank" rel="noopener"><span class="rname">medRxiv</span><span class="rdesc">Clinical and trial related preprints, including early reports of DMG studies.</span></a></li><li><a href="https://www.researchsquare.com/" target="_blank" rel="noopener"><span class="rname">Research Square</span><span class="rdesc">Preprints posted during journal review, often with reviewer comments attached.</span></a></li><li><a href="https://zenodo.org/" target="_blank" rel="noopener"><span class="rname">Zenodo</span><span class="rdesc">General repository with DOIs for preprints, datasets, code, posters and slides that have no journal home.</span></a></li><li><a href="https://osf.io/preprints/" target="_blank" rel="noopener"><span class="rname">OSF Preprints</span><span class="rdesc">Multi-discipline preprint search across many community servers.</span></a></li></ul></section><section class="rgroup"><h3>Writing about the field</h3><ul class="rlist"><li><a href="https://communities.springernature.com/" target="_blank" rel="noopener"><span class="rname">Springer Nature Research Communities</span><span class="rdesc">Behind the paper posts and commentary written by authors of recent cancer and neuroscience papers.</span></a></li><li><a href="https://chadtough.org/" target="_blank" rel="noopener"><span class="rname">ChadTough research updates</span><span class="rdesc">Lay summaries of newly funded DIPG and DMG projects and trial progress.</span></a></li></ul></section>
+</div></section>
+
+<section class="block" id="literature"><div class="wrap">
+<h2>Literature</h2>
+<p class="note">A working bibliography of 53 papers, each verified against its PubMed record. Grouped by what the paper is for rather than by date.</p>
+<section class="pgroup"><h3>Disease biology and cell states</h3><ul class="plist"><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39972132/" target="_blank" rel="noopener"><span class="ptitle">GABAergic neuron-to-glioma synapses in diffuse midline gliomas</span><span class="pmeta">Barron et al. &middot; <em>Nature</em> &middot; 2025 &middot; PMID 39972132</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39419964/" target="_blank" rel="noopener"><span class="ptitle">Therapeutic targeting of differentiation-state dependent metabolic vulnerabilities in diffuse midline glioma</span><span class="pmeta">Mbah et al. &middot; <em>Nat Commun</em> &middot; 2024 &middot; PMID 39419964</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38579724/" target="_blank" rel="noopener"><span class="ptitle">Mutant IDH inhibitors induce lineage differentiation in IDH-mutant oligodendroglioma</span><span class="pmeta">Spitzer et al. &middot; <em>Cancer Cell</em> &middot; 2024 &middot; PMID 38579724</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/35422502/" target="_blank" rel="noopener"><span class="ptitle">Loss of MAT2A compromises methionine metabolism and represents a vulnerability in H3K27M mutant glioma by modulating the epigenome</span><span class="pmeta">Golbourn et al. &middot; <em>Nat Cancer</em> &middot; 2022 &middot; PMID 35422502</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/36471070/" target="_blank" rel="noopener"><span class="ptitle">K27M in canonical and noncanonical H3 variants occurs in distinct oligodendroglial cell lineages in brain midline gliomas</span><span class="pmeta">Jessa et al. &middot; <em>Nat Genet</em> &middot; 2022 &middot; PMID 36471070</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/36471067/" target="_blank" rel="noopener"><span class="ptitle">The landscape of tumor cell states and spatial organization in H3-K27M mutant diffuse midline glioma across age and location</span><span class="pmeta">Liu et al. &middot; <em>Nat Genet</em> &middot; 2022 &middot; PMID 36471067</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/35985342/" target="_blank" rel="noopener"><span class="ptitle">A druggable addiction to de novo pyrimidine biosynthesis in diffuse midline glioma</span><span class="pmeta">Pal et al. &middot; <em>Cancer Cell</em> &middot; 2022 &middot; PMID 35985342</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/36305736/" target="_blank" rel="noopener"><span class="ptitle">BAF Complex Maintains Glioma Stem Cells in Pediatric H3K27M Glioma</span><span class="pmeta">Panditharatna et al. &middot; <em>Cancer Discov</em> &middot; 2022 &middot; PMID 36305736</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/32795401/" target="_blank" rel="noopener"><span class="ptitle">Integrated Metabolic and Epigenomic Reprograming by H3K27M Mutations in Diffuse Intrinsic Pontine Gliomas</span><span class="pmeta">Chung et al. &middot; <em>Cancer Cell</em> &middot; 2020 &middot; PMID 32795401</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/31768071/" target="_blank" rel="noopener"><span class="ptitle">Stalled developmental programs at the root of pediatric brain tumors</span><span class="pmeta">Jessa et al. &middot; <em>Nat Genet</em> &middot; 2019 &middot; PMID 31768071</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/31534222/" target="_blank" rel="noopener"><span class="ptitle">Electrical and synaptic integration of glioma into neural circuits</span><span class="pmeta">Venkatesh et al. &middot; <em>Nature</em> &middot; 2019 &middot; PMID 31534222</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/29674595/" target="_blank" rel="noopener"><span class="ptitle">Developmental and oncogenic programs in H3K27M gliomas dissected by single-cell RNA-seq</span><span class="pmeta">Filbin et al. &middot; <em>Science</em> &middot; 2018 &middot; PMID 29674595</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/29746225/" target="_blank" rel="noopener"><span class="ptitle">Clinical, Radiologic, Pathologic, and Molecular Characteristics of Long-Term Survivors of Diffuse Intrinsic Pontine Glioma (DIPG): A Collaborative Report From the International and European Society for Pediatric Oncology DIPG Registries</span><span class="pmeta">Hoffman et al. &middot; <em>J Clin Oncol</em> &middot; 2018 &middot; PMID 29746225</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/28966033/" target="_blank" rel="noopener"><span class="ptitle">Integrated Molecular Meta-Analysis of 1,000 Pediatric High-Grade and Diffuse Intrinsic Pontine Glioma</span><span class="pmeta">Mackay et al. &middot; <em>Cancer Cell</em> &middot; 2017 &middot; PMID 28966033</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/28434841/" target="_blank" rel="noopener"><span class="ptitle">Transcriptional Dependencies in Diffuse Intrinsic Pontine Glioma</span><span class="pmeta">Nagaraja et al. &middot; <em>Cancer Cell</em> &middot; 2017 &middot; PMID 28434841</span></a></li></ul></section><section class="pgroup"><h3>Clinical trials and approved therapy</h3><ul class="plist"><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/42294888/" target="_blank" rel="noopener"><span class="ptitle">Tumor-derived cell-free DNA detected in cerebrospinal fluid enables minimally invasive profiling of pediatric brain tumors</span><span class="pmeta">Nobre et al. &middot; <em>J Clin Invest</em> &middot; 2026 &middot; PMID 42294888</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39394920/" target="_blank" rel="noopener"><span class="ptitle">Targeted delivery of napabucasin with radiotherapy improves outcomes in diffuse midline glioma</span><span class="pmeta">Gallitto et al. &middot; <em>Neuro Oncol</em> &middot; 2025 &middot; PMID 39394920</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/40086436/" target="_blank" rel="noopener"><span class="ptitle">Effective targeting of PDGFRA-altered high-grade glioma with avapritinib</span><span class="pmeta">Mayr et al. &middot; <em>Cancer Cell</em> &middot; 2025 &middot; PMID 40086436</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39775044/" target="_blank" rel="noopener"><span class="ptitle">Intracerebroventricular B7-H3-targeting CAR T cells for diffuse intrinsic pontine glioma: a phase 1 trial</span><span class="pmeta">Vitanza et al. &middot; <em>Nat Med</em> &middot; 2025 &middot; PMID 39775044</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/41223245/" target="_blank" rel="noopener"><span class="ptitle">Blood-brain barrier opening with neuronavigation-guided focused ultrasound in pediatric patients with diffuse midline glioma</span><span class="pmeta">Wu et al. &middot; <em>Sci Transl Med</em> &middot; 2025 &middot; PMID 41223245</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38335473/" target="_blank" rel="noopener"><span class="ptitle">ONC201 (Dordaviprone) in Recurrent H3 K27M-Mutant Diffuse Midline Glioma</span><span class="pmeta">Arrillaga-Romany et al. &middot; <em>J Clin Oncol</em> &middot; 2024 &middot; PMID 38335473</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39537919/" target="_blank" rel="noopener"><span class="ptitle">Intravenous and intracranial GD2-CAR T cells for H3K27Mdiffuse midline gliomas</span><span class="pmeta">Monje et al. &middot; <em>Nature</em> &middot; 2024 &middot; PMID 39537919</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38039965/" target="_blank" rel="noopener"><span class="ptitle">A road map for the treatment of pediatric diffuse midline glioma</span><span class="pmeta">Koschmann et al. &middot; <em>Cancer Cell</em> &middot; 2023 &middot; PMID 38039965</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/37584601/" target="_blank" rel="noopener"><span class="ptitle">Clinical Efficacy of ONC201 in H3K27M-Mutant Diffuse Midline Gliomas Is Driven by Disruption of Integrated Metabolic and Epigenetic Pathways</span><span class="pmeta">Venneti et al. &middot; <em>Cancer Discov</em> &middot; 2023 &middot; PMID 37584601</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/35137228/" target="_blank" rel="noopener"><span class="ptitle">Serial H3K27M cell-free tumor DNA (cf-tDNA) tracking predicts ONC201 treatment response and progression in diffuse midline glioma</span><span class="pmeta">Cantor et al. &middot; <em>Neuro Oncol</em> &middot; 2022 &middot; PMID 35137228</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/29914796/" target="_blank" rel="noopener"><span class="ptitle">Convection-enhanced delivery for diffuse intrinsic pontine glioma: a single-centre, dose-escalation, phase 1 trial</span><span class="pmeta">Souweidane et al. &middot; <em>Lancet Oncol</em> &middot; 2018 &middot; PMID 29914796</span></a></li></ul></section><section class="pgroup"><h3>Proteomics, PTMs and spatial profiling</h3><ul class="plist"><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/41576930/" target="_blank" rel="noopener"><span class="ptitle">IGSF11-VISTA is a critical and targetable immune checkpoint axis in diffuse midline glioma</span><span class="pmeta">Collot et al. &middot; <em>Cancer Cell</em> &middot; 2026 &middot; PMID 41576930</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39954016/" target="_blank" rel="noopener"><span class="ptitle">The proteomic landscape of diffuse midline glioma highlights the therapeutic potential of non-histone protein methyltransferases</span><span class="pmeta">Anguraj Vadivel et al. &middot; <em>Neuro Oncol</em> &middot; 2025 &middot; PMID 39954016</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39809263/" target="_blank" rel="noopener"><span class="ptitle">Single-molecule systems for the detection and monitoring of plasma-circulating nucleosomes and oncoproteins in diffuse midline glioma</span><span class="pmeta">Erez et al. &middot; <em>Cell Rep Med</em> &middot; 2025 &middot; PMID 39809263</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/40603879/" target="_blank" rel="noopener"><span class="ptitle">Serum metabolic profiling enables diagnosis, prognosis, and monitoring for brainstem gliomas</span><span class="pmeta">Li et al. &middot; <em>Nat Commun</em> &middot; 2025 &middot; PMID 40603879</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/41386224/" target="_blank" rel="noopener"><span class="ptitle">Multi-omic landscape of human gliomas from diagnosis to treatment and recurrence</span><span class="pmeta">Piyadasa et al. &middot; <em>Cancer Cell</em> &middot; 2025 &middot; PMID 41386224</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39786485/" target="_blank" rel="noopener"><span class="ptitle">A field resource for the glioma cerebrospinal fluid proteome: Impacts of resection and location on biomarker discovery</span><span class="pmeta">Riviere-Cazaux et al. &middot; <em>Neuro Oncol</em> &middot; 2025 &middot; PMID 39786485</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/40513780/" target="_blank" rel="noopener"><span class="ptitle">Identification of small open reading frame-encoded peptides in glioma by an optimized proteomics strategy</span><span class="pmeta">Zhang et al. &middot; <em>Mol Cell Proteomics</em> &middot; 2025 &middot; PMID 40513780</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38215747/" target="_blank" rel="noopener"><span class="ptitle">Integrated proteogenomic characterization of glioblastoma evolution</span><span class="pmeta">Kim et al. &middot; <em>Cancer Cell</em> &middot; 2024 &middot; PMID 38215747</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38431639/" target="_blank" rel="noopener"><span class="ptitle">Widespread stable noncanonical peptides identified by integrated analyses of ribosome profiling and ORF features</span><span class="pmeta">Yang et al. &middot; <em>Nat Commun</em> &middot; 2024 &middot; PMID 38431639</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/35590073/" target="_blank" rel="noopener"><span class="ptitle">Deep Visual Proteomics defines single-cell identity and heterogeneity</span><span class="pmeta">Mund et al. &middot; <em>Nat Biotechnol</em> &middot; 2022 &middot; PMID 35590073</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/34663921/" target="_blank" rel="noopener"><span class="ptitle">Unannotated proteins expand the MHC-I-restricted immunopeptidome in cancer</span><span class="pmeta">Ouspenskaia et al. &middot; <em>Nat Biotechnol</em> &middot; 2022 &middot; PMID 34663921</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/33242424/" target="_blank" rel="noopener"><span class="ptitle">Integrated Proteogenomic Characterization across Major Histological Types of Pediatric Brain Cancer</span><span class="pmeta">Petralia et al. &middot; <em>Cell</em> &middot; 2020 &middot; PMID 33242424</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/29662203/" target="_blank" rel="noopener"><span class="ptitle">Potent antitumor efficacy of anti-GD2 CAR T cells in H3-K27Mdiffuse midline gliomas</span><span class="pmeta">Mount et al. &middot; <em>Nat Med</em> &middot; 2018 &middot; PMID 29662203</span></a></li></ul></section><section class="pgroup"><h3>Data resources, models and AI</h3><ul class="plist"><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38718835/" target="_blank" rel="noopener"><span class="ptitle">Accurate structure prediction of biomolecular interactions with AlphaFold 3</span><span class="pmeta">Abramson et al. &middot; <em>Nature</em> &middot; 2024 &middot; PMID 38718835</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/39672099/" target="_blank" rel="noopener"><span class="ptitle">How to build the virtual cell with artificial intelligence: Priorities and opportunities</span><span class="pmeta">Bunne et al. &middot; <em>Cell</em> &middot; 2024 &middot; PMID 39672099</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/38409223/" target="_blank" rel="noopener"><span class="ptitle">scGPT: toward building a foundation model for single-cell multi-omics using generative AI</span><span class="pmeta">Cui et al. &middot; <em>Nat Methods</em> &middot; 2024 &middot; PMID 38409223</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/37492101/" target="_blank" rel="noopener"><span class="ptitle">OpenPBTA: The Open Pediatric Brain Tumor Atlas</span><span class="pmeta">Shapiro et al. &middot; <em>Cell Genom</em> &middot; 2023 &middot; PMID 37492101</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/37258680/" target="_blank" rel="noopener"><span class="ptitle">Transfer learning enables predictions in network biology</span><span class="pmeta">Theodoris et al. &middot; <em>Nature</em> &middot; 2023 &middot; PMID 37258680</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/37821699/" target="_blank" rel="noopener"><span class="ptitle">Ultra-fast deep-learned CNS tumour classification during surgery</span><span class="pmeta">Vermeulen et al. &middot; <em>Nature</em> &middot; 2023 &middot; PMID 37821699</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/36470898/" target="_blank" rel="noopener"><span class="ptitle">Federated learning enables big data for rare cancer boundary detection</span><span class="pmeta">Pati et al. &middot; <em>Nat Commun</em> &middot; 2022 &middot; PMID 36470898</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/35688146/" target="_blank" rel="noopener"><span class="ptitle">Mapping information-rich genotype-phenotype landscapes with genome-scale Perturb-seq</span><span class="pmeta">Replogle et al. &middot; <em>Cell</em> &middot; 2022 &middot; PMID 35688146</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/33753930/" target="_blank" rel="noopener"><span class="ptitle">A first-generation pediatric cancer dependency map</span><span class="pmeta">Dharia et al. &middot; <em>Nat Genet</em> &middot; 2021 &middot; PMID 33753930</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/34321199/" target="_blank" rel="noopener"><span class="ptitle">A single-cell type transcriptomics map of human tissues</span><span class="pmeta">Karlsson et al. &middot; <em>Sci Adv</em> &middot; 2021 &middot; PMID 34321199</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/33015372/" target="_blank" rel="noopener"><span class="ptitle">The future of digital health with federated learning</span><span class="pmeta">Rieke et al. &middot; <em>NPJ Digit Med</em> &middot; 2020 &middot; PMID 33015372</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/29539639/" target="_blank" rel="noopener"><span class="ptitle">DNA methylation-based classification of central nervous system tumours</span><span class="pmeta">Capper et al. &middot; <em>Nature</em> &middot; 2018 &middot; PMID 29539639</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/28753430/" target="_blank" rel="noopener"><span class="ptitle">Defining a Cancer Dependency Map</span><span class="pmeta">Tsherniak et al. &middot; <em>Cell</em> &middot; 2017 &middot; PMID 28753430</span></a></li><li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/25613900/" target="_blank" rel="noopener"><span class="ptitle">Proteomics. Tissue-based map of the human proteome</span><span class="pmeta">Uhlén et al. &middot; <em>Science</em> &middot; 2015 &middot; PMID 25613900</span></a></li></ul></section>
+</div></section>
+
+<section class="block" id="about"><div class="wrap">
+<h2>About this page</h2>
+<p class="note">This is a personal research reference maintained alongside work on DMG proteomics and functional omics at SickKids. It is not affiliated with any consortium, registry or sponsor, and inclusion here is not an endorsement of a trial or a product. Trial status changes constantly, so treat the ClinicalTrials.gov record as current and this table as a snapshot.</p>
+<p class="note">Corrections, additions and links worth including are welcome: <span style="font-family:var(--font-mono)">arun.angurajvadivel@sickkids.ca</span></p>
+</div></section>
+
+<footer><div class="wrap">
+<p>Compiled 26 October 2026. Trial data from ClinicalTrials.gov; literature metadata from PubMed. Families looking for support and current treatment options should start with their treating centre and with the foundations listed above.</p>
+</div></footer>
+
+<script>
+/* === DATA START: regenerated by the daily refresh; replace only between these markers === */
+const TRIALS = [
+ {
+  "id": "NCT07562971",
+  "name": "FIDES: focused ultrasound with temozolomide",
+  "phase": "Phase 1/2",
+  "cat": "Delivery",
+  "sponsor": "UMC Utrecht",
+  "status": "Not yet recruiting",
+  "note": "Pontine DMG, opens 2026"
+ },
+ {
+  "id": "NCT07664176",
+  "name": "Focused ultrasound with nivolumab",
+  "phase": "Phase 1",
+  "cat": "Delivery",
+  "sponsor": "Children's National",
+  "status": "Recruiting",
+  "note": "Relapsed and progressive DMG and other high grade tumors"
+ },
+ {
+  "id": "NCT05762419",
+  "name": "Focused ultrasound with oral etoposide",
+  "phase": "Phase 1",
+  "cat": "Delivery",
+  "sponsor": "Columbia University",
+  "status": "Recruiting",
+  "note": "Progressive DMG; neuronavigation-guided sonication"
+ },
+ {
+  "id": "NCT06357377",
+  "name": "Intranasal NEO100",
+  "phase": "Phase 1b",
+  "cat": "Delivery",
+  "sponsor": "Neonc Technologies",
+  "status": "Recruiting",
+  "note": "Brain tumor delivery and pharmacokinetics"
+ },
+ {
+  "id": "NCT07796061",
+  "name": "LIFT: focused ultrasound with TAA-specific T cells",
+  "phase": "Phase 1",
+  "cat": "Delivery",
+  "sponsor": "Children's National",
+  "status": "Recruiting",
+  "note": "PRAME, survivin and WT1 targeted T cells, newly diagnosed DMG"
+ },
+ {
+  "id": "NCT06221553",
+  "name": "B7-H3 CAR T with IL-7Ra signaling",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "Chulalongkorn University",
+  "status": "Recruiting",
+  "note": "Intraventricular infusion"
+ },
+ {
+  "id": "NCT04185038",
+  "name": "B7-H3 CAR T, locoregional delivery",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "Seattle Children's",
+  "status": "Recruiting",
+  "note": "Intracerebroventricular dosing, DIPG/DMG and other CNS tumors"
+ },
+ {
+  "id": "NCT06305910",
+  "name": "CD200AR-L and tumor lysate vaccine with re-irradiation",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "OX2 Therapeutics",
+  "status": "Recruiting",
+  "note": "Newly diagnosed DMG and recurrent HGG"
+ },
+ {
+  "id": "NCT04099797",
+  "name": "GAIL-B: C7R-GD2 CAR T",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "Baylor College of Medicine",
+  "status": "Recruiting",
+  "note": "Constitutively active IL-7 receptor; IV and ICV infusion"
+ },
+ {
+  "id": "NCT05544526",
+  "name": "GD2 CAR T cells",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "University College London",
+  "status": "Recruiting",
+  "note": "H3 K27M-mutant DMG"
+ },
+ {
+  "id": "NCT05298995",
+  "name": "GD2-CART01 (iC9-GD2)",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "Bambino Gesu, Rome",
+  "status": "Recruiting",
+  "note": "Relapsed or refractory pediatric CNS tumors"
+ },
+ {
+  "id": "NCT07501156",
+  "name": "H3K27M-specific engineered immune effectors",
+  "phase": "Phase 1/2",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "Shenzhen Geno-Immune Medical Institute",
+  "status": "Not yet recruiting",
+  "note": "Opens 2027"
+ },
+ {
+  "id": "NCT04943848",
+  "name": "rHSC-DIPGVax with checkpoint blockade",
+  "phase": "Phase 1",
+  "cat": "Immunotherapy and cell therapy",
+  "sponsor": "Lurie Children's, Chicago",
+  "status": "Recruiting",
+  "note": "Neoantigen heat shock protein vaccine with balstilimab and zalifrelimab"
+ },
+ {
+  "id": "NCT05717712",
+  "name": "Ad-TD-nsIL12 oncolytic virus, primary DIPG",
+  "phase": "Phase 1",
+  "cat": "Oncolytic virus",
+  "sponsor": "Capital Medical University",
+  "status": "Recruiting",
+  "note": "Companion trial NCT05717699 in progressive disease"
+ },
+ {
+  "id": "NCT07076498",
+  "name": "Engineered HSV-1 M032 after radiation",
+  "phase": "Phase 1",
+  "cat": "Oncolytic virus",
+  "sponsor": "MD Anderson",
+  "status": "Recruiting",
+  "note": "Newly diagnosed DMG, children and adults"
+ },
+ {
+  "id": "NCT07589257",
+  "name": "VRT106 with radiotherapy",
+  "phase": "Phase 2",
+  "cat": "Oncolytic virus",
+  "sponsor": "Guangzhou Virotech",
+  "status": "Recruiting",
+  "note": "Adult DMG including DIPG"
+ },
+ {
+  "id": "NCT05476939",
+  "name": "BIOMEDE 2.0: everolimus or ONC201 with radiotherapy",
+  "phase": "Phase 3",
+  "cat": "Platform and multi-arm",
+  "sponsor": "Gustave Roussy",
+  "status": "Recruiting",
+  "note": "Biomarker-driven European trial, 56 sites"
+ },
+ {
+  "id": "NCT05009992",
+  "name": "PNOC022: adaptive combination platform",
+  "phase": "Phase 2",
+  "cat": "Platform and multi-arm",
+  "sponsor": "UCSF",
+  "status": "Recruiting",
+  "note": "ONC201, paxalisib, DNX-2401 arms at diagnosis, post-radiation and progression"
+ },
+ {
+  "id": "NCT06093165",
+  "name": "Re-irradiation of DMG patients",
+  "phase": "Not applicable",
+  "cat": "Radiation",
+  "sponsor": "Rigshospitalet, Copenhagen",
+  "status": "Not yet recruiting",
+  "note": "Pontine and thalamic tumors"
+ },
+ {
+  "id": "NCT07869524",
+  "name": "imPro-DIPG-01: proton versus photon radiotherapy",
+  "phase": "Phase 3",
+  "cat": "Radiation",
+  "sponsor": "Shandong Cancer Hospital",
+  "status": "Not yet recruiting",
+  "note": "Randomized, 142 patients"
+ },
+ {
+  "id": "NCT06838676",
+  "name": "ACT001 in DIPG and H3K27-altered HGG",
+  "phase": "Phase 2",
+  "cat": "Targeted and metabolic",
+  "sponsor": "Nationwide Children's",
+  "status": "Recruiting",
+  "note": "20 sites"
+ },
+ {
+  "id": "NCT05580562",
+  "name": "ACTION: dordaviprone after radiotherapy",
+  "phase": "Phase 3",
+  "cat": "Targeted and metabolic",
+  "sponsor": "Jazz Pharmaceuticals",
+  "status": "Recruiting",
+  "note": "Randomized, placebo-controlled, newly diagnosed H3 K27M diffuse glioma; 162 sites"
+ },
+ {
+  "id": "NCT06624371",
+  "name": "Atovaquone with radiation",
+  "phase": "Phase 1",
+  "cat": "Targeted and metabolic",
+  "sponsor": "Emory University",
+  "status": "Recruiting",
+  "note": "Pediatric malignant brain tumors"
+ },
+ {
+  "id": "NCT04870944",
+  "name": "CBL0137 (FACT-targeting curaxin)",
+  "phase": "Phase 1/2",
+  "cat": "Targeted and metabolic",
+  "sponsor": "Children's Oncology Group",
+  "status": "Recruiting",
+  "note": "Relapsed or refractory CNS tumors including DMG, 35 sites"
+ },
+ {
+  "id": "NCT04732065",
+  "name": "ONC206 with target validation",
+  "phase": "Phase 1",
+  "cat": "Targeted and metabolic",
+  "sponsor": "UCSF (PNOC)",
+  "status": "Recruiting",
+  "note": "Newly diagnosed or recurrent DMG; optional MR spectroscopy"
+ },
+ {
+  "id": "NCT05843253",
+  "name": "Ribociclib combinations after radiotherapy",
+  "phase": "Phase 2",
+  "cat": "Targeted and metabolic",
+  "sponsor": "Nationwide Children's",
+  "status": "Recruiting",
+  "note": "Cell cycle or PI3K/mTOR altered tumors"
+ }
+];
+const PAPERS = [
+ {
+  "pmid": "42879709",
+  "title": "A 35-year-old woman with multiple sclerosis and a new atypical thalamic lesion: a case report",
+  "authors": "Michaelson NM et al.",
+  "journal": "Neurol Neuroimmunol Neuroinflamm",
+  "date": "2026-10-14",
+  "doi": "10.1212/NXI.0000000000200667",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42872145",
+  "title": "Adult thalamic diffuse midline glioma, H3 K27-altered, with comutation and potential early subependymal dissemination",
+  "authors": "Idamakanti M et al.",
+  "journal": "J Med Cases",
+  "date": "2026-10-02",
+  "doi": "10.14740/jmc5399",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42835965",
+  "title": "Beyond variant detection: mismatch repair gene alterations in plasma cell-free DNA from 1,226 glioma samples, and plasma-confirmed functional deficiency in an unbiopsied pontine glioma",
+  "authors": "Karanth S et al.",
+  "journal": "J Liq Biopsy",
+  "date": "2026-09-23",
+  "doi": "10.1016/j.jlb.2026.100664",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42761323",
+  "title": "Diffuse midline glioma, H3 K27-altered, forming a suprasellar mass: a case report",
+  "authors": "Nakazato R et al.",
+  "journal": "Radiol Case Rep",
+  "date": "2026-09-11",
+  "doi": "10.1016/j.radcr.2026.08.041",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42714480",
+  "title": "Intramedullary spinal cord tumors: MRI diagnosis and differential diagnosis",
+  "authors": "Yilmaz U",
+  "journal": "Radiologie (Heidelb)",
+  "date": "2026-09-09",
+  "doi": "10.1007/s00117-026-01657-9",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42863951",
+  "title": "Imaging of neoplastic disorders of the spinal cord: part 1",
+  "authors": "Brown JD et al.",
+  "journal": "Neuroimaging Clin N Am",
+  "date": "2026-07-21",
+  "doi": "10.1016/j.nic.2026.06.014",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42462625",
+  "title": "Targeting MD2 in diseases: from structure and function to inhibitor development",
+  "authors": "Cheng F et al.",
+  "journal": "Eur J Med Chem",
+  "date": "2026-07-14",
+  "doi": "10.1016/j.ejmech.2026.119157",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ },
+ {
+  "pmid": "42751161",
+  "title": "ONC201/dordaviprone for H3 K27M-mutant tumors: discovery, mechanisms, therapeutic potential, and future directions",
+  "authors": "Pimentel JM et al.",
+  "journal": "Genes Dis",
+  "date": "2026-06-24",
+  "doi": "10.1016/j.gendis.2026.102335",
+  "source": "PubMed",
+  "added": "2026-10-26"
+ }
+];
+const STAMP = "Last automatic refresh: 26 October 2026. Seeded by hand; the daily task takes over from the next run.";
+/* === DATA END === */
+const $ = id => document.getElementById(id);
+let active = "All";
+
+function renderTrials() {
+  const term = $('q').value.trim().toLowerCase();
+  const rows = TRIALS
+    .filter(t => active === 'All' || t.cat === active)
+    .filter(t => !term || ((t.name || '') + ' ' + (t.sponsor || '') + ' ' + (t.id || '') + ' ' + (t.note || '')).toLowerCase().includes(term));
+  $('rows').innerHTML = rows.length ? rows.map(t => `
+    <tr>
+      <td class="name">${esc(t.name)}<small>${esc(t.note || '')}</small></td>
+      <td>${esc(t.phase || '')}</td>
+      <td>${esc(t.cat || '')}</td>
+      <td>${esc(t.sponsor || '')}</td>
+      <td><span class="status ${/not yet/i.test(t.status || '') ? 'nyr' : 'rec'}">${esc(t.status || '')}</span></td>
+      <td><a class="nct" href="https://clinicaltrials.gov/study/${encodeURIComponent(t.id)}" target="_blank" rel="noopener">${esc(t.id)}</a></td>
+    </tr>`).join('') : '<tr><td colspan="6" class="empty">No studies match that filter.</td></tr>';
+  $('count').textContent = rows.length + ' of ' + TRIALS.length + ' studies shown';
+}
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function buildFilters() {
+  const cats = [];
+  TRIALS.forEach(t => { if (t.cat && !cats.includes(t.cat)) cats.push(t.cat); });
+  cats.sort();
+  const f = $('filters'); f.innerHTML = '';
+  ['All'].concat(cats).forEach(c => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.type = 'button'; b.textContent = c;
+    b.setAttribute('aria-pressed', c === active ? 'true' : 'false');
+    b.addEventListener('click', () => { active = c; [...f.children].forEach(x => x.setAttribute('aria-pressed', x.textContent === c ? 'true' : 'false')); renderTrials(); });
+    f.appendChild(b);
+  });
+}
+$('q').addEventListener('input', renderTrials);
+
+function renderFeed(papers) {
+  if (!papers.length) { $('feed').innerHTML = '<li class="empty">No new papers recorded yet. The next daily refresh will fill this in.</li>'; return; }
+  $('feed').innerHTML = papers.map(p => `<li><a class="paper" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p.pmid)}/" target="_blank" rel="noopener">
+    <span class="ptitle">${esc(p.title)}</span>
+    <span class="pmeta">${esc(p.authors || '')} &middot; <em>${esc(p.journal || '')}</em> &middot; ${esc(p.date || '')} &middot; PMID ${esc(p.pmid)}</span></a></li>`).join('');
+}
+
+buildFilters();
+renderTrials();
+renderFeed(PAPERS);
+$('stamp').textContent = STAMP;
+</script>
+
+</body>
+</html>
