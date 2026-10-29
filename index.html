@@ -58,7 +58,9 @@ details.sect > summary h2 { margin:0; }
 .shint { color: var(--muted); font-size:0.85rem; white-space:nowrap; font-variant-numeric: tabular-nums; }
 .sbody { padding-top:12px; }
 .sectbar { border-bottom:1px solid var(--line); }
-.sectbar .wrap { display:flex; gap:8px; padding-block:10px; }
+.sectbar .wrap { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding-block:10px; }
+#sitesearch { flex:1; min-width:min(320px, 100%); max-width:640px; }
+li[hidden], section[hidden] { display:none !important; }
 h2 { font-family: var(--font-display); font-weight:600; font-size: clamp(1.5rem,3.5vw,2rem); margin:0 0 6px; letter-spacing:-0.01em; }
 h3 { font-size:0.86rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--fg); margin:28px 0 12px; font-weight:700; }
 p.note { color: var(--muted); max-width:70ch; margin:0 0 20px; font-size:0.95rem; }
@@ -111,7 +113,7 @@ a { color: var(--accent); }
 </div></nav>
 
 <div class="sectbar"><div class="wrap">
-<button class="chip" type="button" id="expand">Expand all</button><button class="chip" type="button" id="collapse">Collapse all</button>
+<input type="search" id="sitesearch" placeholder="Search the whole page: a drug, a gene, a lab, a trial number, an author" aria-label="Search the whole page"><button class="chip" type="button" id="expand">Expand all</button><button class="chip" type="button" id="collapse">Collapse all</button><span class="count" id="searchcount"></span>
 </div></div>
 
 <section class="block" id="intro"><div class="wrap">
@@ -838,12 +840,16 @@ const STAMP = "Last automatic refresh: 29 October 2026. Added 1 paper and no tri
 /* === DATA END === */
 const $ = id => document.getElementById(id);
 let active = "All";
+let siteTerm = '';
+const sects = () => [...document.querySelectorAll('details.sect')];
 
+const blob = t => ((t.name || '') + ' ' + (t.phase || '') + ' ' + (t.cat || '') + ' ' + (t.sponsor || '') + ' ' + (t.id || '') + ' ' + (t.status || '') + ' ' + (t.note || '')).toLowerCase();
 function renderTrials() {
   const term = $('q').value.trim().toLowerCase();
   const rows = TRIALS
     .filter(t => active === 'All' || t.cat === active)
-    .filter(t => !term || ((t.name || '') + ' ' + (t.sponsor || '') + ' ' + (t.id || '') + ' ' + (t.note || '')).toLowerCase().includes(term));
+    .filter(t => !term || blob(t).includes(term))
+    .filter(t => !siteTerm || blob(t).includes(siteTerm));
   $('rows').innerHTML = rows.length ? rows.map(t => `
     <tr>
       <td class="name">${esc(t.name)}<small>${esc(t.note || '')}</small></td>
@@ -875,7 +881,8 @@ function visibleTrials() {
   const term = $('q').value.trim().toLowerCase();
   return TRIALS
     .filter(t => active === 'All' || t.cat === active)
-    .filter(t => !term || ((t.name || '') + ' ' + (t.sponsor || '') + ' ' + (t.id || '') + ' ' + (t.note || '')).toLowerCase().includes(term));
+    .filter(t => !term || blob(t).includes(term))
+    .filter(t => !siteTerm || blob(t).includes(siteTerm));
 }
 const csvBtn = $('csv');
 if (csvBtn) csvBtn.addEventListener('click', () => {
@@ -909,7 +916,6 @@ $('stamp').textContent = STAMP;
 /* Collapsible sections. Each viewer's open and closed sections are remembered in
    their own browser where that is allowed, and the page works the same if it is not. */
 const SECT_KEY = 'dmghub.sections';
-const sects = () => [...document.querySelectorAll('details.sect')];
 function saveSects() {
   try {
     const o = {};
@@ -936,10 +942,60 @@ openFromHash();
 $('expand').addEventListener('click', () => { sects().forEach(d => { d.open = true; }); saveSects(); });
 $('collapse').addEventListener('click', () => { sects().forEach(d => { d.open = false; }); saveSects(); });
 
-const hintTrials = $('hint-trials');
-if (hintTrials) hintTrials.textContent = TRIALS.length + ' studies';
-const hintLatest = $('hint-latest');
-if (hintLatest) hintLatest.textContent = PAPERS.length + ' recent papers';
+function setHints() {
+  const hintTrials = $('hint-trials');
+  if (hintTrials) hintTrials.textContent = (siteTerm ? visibleTrials().length + ' matching' : TRIALS.length + ' studies');
+  const hintLatest = $('hint-latest');
+  if (hintLatest) hintLatest.textContent = (siteTerm ? countVisible($('latest')) + ' matching' : PAPERS.length + ' recent papers');
+}
+
+/* One search box for the whole page. It hides the cards, papers and trial rows
+   that do not match, opens the sections that still have something in them, and
+   puts everything back when the box is emptied. */
+let beforeSearch = null;
+function countVisible(section) {
+  if (!section) return 0;
+  if (section.id === 'trials') return visibleTrials().length;
+  return section.querySelectorAll('li:not([hidden])').length;
+}
+function runSearch() {
+  const raw = $('sitesearch').value.trim();
+  const had = !!siteTerm;
+  siteTerm = raw.toLowerCase();
+  if (siteTerm && !had) beforeSearch = sects().map(d => d.open);
+  document.querySelectorAll('.rlist > li, .plist > li').forEach(li => {
+    li.hidden = !!siteTerm && !li.textContent.toLowerCase().includes(siteTerm);
+  });
+  document.querySelectorAll('.rgroup, .pgroup').forEach(g => {
+    const lis = g.querySelectorAll('li');
+    g.hidden = !!siteTerm && (lis.length
+      ? [...lis].every(li => li.hidden)
+      : !g.textContent.toLowerCase().includes(siteTerm));
+  });
+  renderTrials();
+  let total = 0;
+  sects().forEach((d, i) => {
+    const section = d.closest('section.block');
+    const n = countVisible(section);
+    total += n;
+    if (siteTerm) {
+      section.hidden = n === 0 && !section.querySelector('.rgroup:not([hidden]), .pgroup:not([hidden])');
+      d.open = !section.hidden;
+    } else {
+      section.hidden = false;
+      if (beforeSearch) d.open = beforeSearch[i];
+    }
+  });
+  setHints();
+  $('searchcount').textContent = siteTerm ? (total ? total + ' matches' : 'No matches on this page') : '';
+  if (!siteTerm) beforeSearch = null;
+}
+$('sitesearch').addEventListener('input', runSearch);
+$('sitesearch').addEventListener('keydown', e => { if (e.key === 'Escape') { $('sitesearch').value = ''; runSearch(); } });
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) { e.preventDefault(); $('sitesearch').focus(); }
+});
+setHints();
 </script>
 
 </body>
