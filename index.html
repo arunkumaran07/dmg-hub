@@ -48,7 +48,7 @@ nav.sections a { color: var(--fg); text-decoration:none; font-weight:700; font-s
 nav.sections a:hover, nav.sections a:focus-visible { color: var(--accent); }
 section.block { padding-block: 44px; border-bottom:1px solid var(--line); }
 h2 { font-family: var(--font-display); font-weight:600; font-size: clamp(1.5rem,3.5vw,2rem); margin:0 0 6px; letter-spacing:-0.01em; }
-h3 { font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--muted); margin:28px 0 12px; font-weight:600; }
+h3 { font-size:0.86rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--fg); margin:28px 0 12px; font-weight:700; }
 p.note { color: var(--muted); max-width:70ch; margin:0 0 20px; font-size:0.95rem; }
 .controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:18px; }
 button.chip { font:inherit; font-size:0.84rem; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background: var(--surface); color: var(--muted); cursor:pointer; }
@@ -57,7 +57,7 @@ input[type="search"] { font:inherit; font-size:0.9rem; padding:7px 12px; border-
 .tablewrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; background: var(--surface); }
 table { border-collapse: collapse; width:100%; font-size:0.9rem; }
 th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
-th { font-size:0.74rem; letter-spacing:0.07em; text-transform:uppercase; color: var(--muted); font-weight:600; white-space:nowrap; }
+th { font-size:0.76rem; letter-spacing:0.07em; text-transform:uppercase; color: var(--fg); font-weight:700; white-space:nowrap; }
 tbody tr:last-child td { border-bottom:0; }
 td.name { min-width:230px; }
 td.name small { display:block; color: var(--muted); font-size:0.82rem; margin-top:3px; }
@@ -79,8 +79,8 @@ td.empty { display:table-cell; }
 .rdesc { display:block; color: var(--muted); font-size:0.88rem; }
 .plist a { display:block; min-width:0; text-decoration:none; color:inherit; padding:9px 0; border-bottom:1px dotted var(--line); }
 .plist li:last-child a { border-bottom:0; }
-.ptitle { display:block; }
-.plist a:hover .ptitle { color: var(--accent); }
+.ptitle { display:block; color: var(--accent); font-weight:600; }
+.plist a:hover .ptitle { text-decoration: underline; }
 .pmeta { display:block; color: var(--muted); font-size:0.84rem; font-variant-numeric: tabular-nums; margin-top:2px; }
 footer { padding-block: 32px 56px; color: var(--muted); font-size:0.86rem; }
 footer p { max-width:72ch; }
@@ -95,13 +95,60 @@ a { color: var(--accent); }
 </div></header>
 
 <nav class="sections"><div class="wrap">
-<a href="#resources">Data and resources</a><a href="#latest">New papers</a><a href="#grants">Grants and foundations</a><a href="#trials">Open trials</a><a href="#labs">Labs</a><a href="#archives">Preprints and blogs</a><a href="#literature">Literature</a><a href="#about">About</a>
+<a href="#intro">What is DMG</a><a href="#resources">Data and resources</a><a href="#datasets">Dataset index</a><a href="#latest">New papers</a><a href="#grants">Grants and foundations</a><a href="#trials">Open trials</a><a href="#labs">Labs</a><a href="#archives">Preprints and blogs</a><a href="#literature">Literature</a><a href="#about">About</a>
 </div></nav>
+
+<section class="block" id="intro"><div class="wrap">
+<h2>What is diffuse midline glioma</h2>
+<p class="note">Written in plain language for anyone arriving here without a background in neuro-oncology. It describes what is published; it is not medical advice, and decisions about a particular child belong with that child's own care team.</p>
+
+<section class="rgroup"><h3>The disease</h3>
+<p class="note">Diffuse midline glioma, often shortened to DMG, is a tumour that grows in the middle structures of the brain and spinal cord: most often the pons, which is part of the brainstem, and also the thalamus and the spinal cord. When it arises in the pons it is also called diffuse intrinsic pontine glioma, or DIPG. The word diffuse matters. The tumour cells spread between normal brain cells rather than forming a lump with a clean edge, which is why surgery to remove it is not possible in the way it often is for other tumours.</p>
+<p class="note">Most of these tumours carry a single change in a protein that packages DNA, a histone. The change is called H3 K27M, and the current classification names the disease after it: diffuse midline glioma, H3 K27-altered. That one change alters how thousands of genes are switched on and off, which is why the disease behaves so differently from adult brain tumours.</p></section>
+
+<section class="rgroup"><h3>Who it affects, and what the numbers say</h3>
+<p class="note">DMG is mainly a disease of children, with a peak between about five and ten years of age, although it also occurs in teenagers and adults. It is rare: a few hundred children a year worldwide. In the largest registry series, covering 1,008 children with diffuse intrinsic pontine glioma, median survival was 11 months from diagnosis and about one in ten children were alive at two years (<a href="https://pubmed.ncbi.nlm.nih.gov/29746225/" target="_blank" rel="noopener">Hoffman et al., 2018</a>). Those numbers describe a group, not an individual, and they predate the treatments now in trials.</p></section>
+
+<section class="rgroup"><h3>How it is diagnosed and treated today</h3>
+<p class="note">Diagnosis usually begins with an MRI, which in a typical pontine tumour is characteristic enough that the picture alone can make the diagnosis. Many centres now also take a small biopsy, which carries risk but allows the tumour's molecular type to be established and makes trial entry possible. Radiotherapy is the one treatment with a reliable effect on survival, usually given over about six weeks, and it often brings a period of improvement in symptoms. Chemotherapy as used in other childhood cancers has not been shown to help.</p>
+<p class="note">In 2025 the US Food and Drug Administration granted accelerated approval to dordaviprone, also known as ONC201, for recurrent H3 K27M mutant disease. Accelerated approval means the drug was approved on tumour response rather than on proven survival benefit, and a confirmatory trial is under way (<a href="https://pubmed.ncbi.nlm.nih.gov/38335473/" target="_blank" rel="noopener">Arrillaga-Romany et al., 2024</a>). Early trials of CAR T cells, immune cells engineered to recognise the tumour, have produced measurable tumour shrinkage in some patients, with serious side effects that required intensive care (<a href="https://pubmed.ncbi.nlm.nih.gov/39537919/" target="_blank" rel="noopener">Monje et al.</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/39775044/" target="_blank" rel="noopener">Vitanza et al.</a>). These are early phase studies, which means they are testing safety and signal, not proving benefit.</p></section>
+
+<section class="rgroup"><h3>Why it is hard, and what is changing</h3>
+<p class="note">Three things make DMG difficult. Its location rules out surgical removal. The blood brain barrier keeps many drugs out of the brain, which is why trials now test delivery directly into the tumour or through focused ultrasound that opens the barrier temporarily. And the tumour is driven by a change in how genes are regulated rather than by a single faulty protein that a drug can switch off.</p>
+<p class="note">What has changed in the last few years is measurement. Tumour DNA can now be detected in cerebrospinal fluid, so response can be tracked without repeated surgery (<a href="https://pubmed.ncbi.nlm.nih.gov/42294888/" target="_blank" rel="noopener">Nobre et al., 2026</a>). Tumours can be described at the level of proteins and their modifications, not only genes. And the research community has agreed a shared road map for how trials and data sharing should work (<a href="https://pubmed.ncbi.nlm.nih.gov/38039965/" target="_blank" rel="noopener">Koschmann et al.</a>).</p></section>
+
+<section class="rgroup"><h3>Where to find help</h3>
+<p class="note">For families, the most useful first contacts are the treating centre's neuro-oncology team and the family support services run by the disease foundations, which can explain options and trials in person. <a href="https://chadtough.org/my-dipg-navigator/about-us/chadtough-defeat-dipg-foundation/" target="_blank" rel="noopener">My DIPG Navigator</a> at the ChadTough Defeat DMG Foundation offers one to one support, and <a href="https://dipg.org/research/overview/" target="_blank" rel="noopener">dipg.org</a> keeps plain language summaries of current research. The trial table on this page lists studies that are open, but eligibility is decided by the trial team and a referral normally comes through the treating oncologist.</p></section>
+</div></section>
 
 <section class="block" id="resources"><div class="wrap">
 <h2>Data and resources</h2>
 <p class="note">Where DMG tissue, molecular data and reference material actually live. Access terms differ: some are open, some controlled, and some require a project application.</p>
 <section class="rgroup"><h3>Tissue, genomics and clinical data</h3><ul class="rlist"><li><a href="https://cbtn.org/" target="_blank" rel="noopener"><span class="rname">Children's Brain Tumor Network (CBTN)</span><span class="rdesc">Specimens, clinical annotation and harmonized sequencing from member institutions; request access through the CBTN platform.</span></a></li><li><a href="https://kidsfirstdrc.org/" target="_blank" rel="noopener"><span class="rname">Kids First Data Resource Center</span><span class="rdesc">Hosts the CBTN dataset and other pediatric cohorts for cloud analysis.</span></a></li><li><a href="https://d3b.center/our-research/pedcbioportal/" target="_blank" rel="noopener"><span class="rname">PedcBioPortal</span><span class="rdesc">Browser for pediatric cancer genomics, including OpenPBTA and CBTN cohorts.</span></a></li><li><a href="https://datacatalog.ccdi.cancer.gov/" target="_blank" rel="noopener"><span class="rname">Childhood Cancer Data Catalog</span><span class="rdesc">Index of childhood cancer datasets and the access route for each.</span></a></li></ul></section><section class="rgroup"><h3>Proteomics and molecular archives</h3><ul class="rlist"><li><a href="https://pdc.cancer.gov/" target="_blank" rel="noopener"><span class="rname">Proteomic Data Commons</span><span class="rdesc">CPTAC proteogenomic data, including the pediatric brain tumor cohort.</span></a></li><li><a href="https://www.ebi.ac.uk/pride/" target="_blank" rel="noopener"><span class="rname">PRIDE</span><span class="rdesc">ProteomeXchange archive for raw and processed mass spectrometry data.</span></a></li><li><a href="https://ega-archive.org/" target="_blank" rel="noopener"><span class="rname">European Genome-phenome Archive</span><span class="rdesc">Controlled access archive for human sequence and molecular data.</span></a></li><li><a href="https://www.proteinatlas.org/" target="_blank" rel="noopener"><span class="rname">Human Protein Atlas</span><span class="rdesc">Tissue, subcellular and single cell type protein localization references.</span></a></li></ul></section><section class="rgroup"><h3>Models, dependencies and classifiers</h3><ul class="rlist"><li><a href="https://depmap.org/portal/" target="_blank" rel="noopener"><span class="rname">DepMap</span><span class="rdesc">Cancer dependency maps, including the pediatric dependency panel.</span></a></li><li><a href="https://www.molecularneuropathology.org/mnp/" target="_blank" rel="noopener"><span class="rname">Molecular Neuropathology classifier</span><span class="rdesc">DNA methylation based CNS tumor classification, including the DMG K27 class.</span></a></li></ul></section><section class="rgroup"><h3>Consortia, registries and families</h3><ul class="rlist"><li><a href="https://chadtough.org/" target="_blank" rel="noopener"><span class="rname">ChadTough Defeat DMG Foundation</span><span class="rdesc">Research funding, the DMG ACT advocacy effort, and the My DIPG Navigator support service for families.</span></a></li><li><a href="https://thecurestartsnow.org/" target="_blank" rel="noopener"><span class="rname">The Cure Starts Now</span><span class="rdesc">Funds DIPG and DMG research internationally and convenes the DIPG/DMG Collaborative.</span></a></li><li><a href="https://dipgcollaborative.org/" target="_blank" rel="noopener"><span class="rname">DIPG/DMG Collaborative</span><span class="rdesc">Pooled funding partnership of family foundations supporting DIPG and DMG research worldwide.</span></a></li><li><a href="https://dipg.org/research/overview/" target="_blank" rel="noopener"><span class="rname">DIPG.org research overview</span><span class="rdesc">Plain language summaries of current DIPG research directions for families and clinicians.</span></a></li><li><a href="https://defeatdipg.org/current-research/" target="_blank" rel="noopener"><span class="rname">Michael Mosier Defeat DIPG Foundation</span><span class="rdesc">Grants to DIPG research programs, including early support for ONC201 development.</span></a></li></ul></section>
+</div></section>
+
+<section class="block" id="datasets"><div class="wrap">
+<h2>Dataset index</h2>
+<p class="note">Where the data behind the main DMG papers actually sits, and how to search each archive for more. Accession numbers are given only where they have been verified; for the rest, the archive search links below are the reliable route, since data availability statements are the authoritative source and change between preprint and final version.</p>
+
+<section class="rgroup"><h3>Named DMG datasets</h3><ul class="rlist">
+<li><a href="https://ega-archive.org/studies/EGAS00001005773" target="_blank" rel="noopener"><span class="rname">EGAS00001005773 — H3 K27M single cell and epigenomic cohort</span><span class="rdesc">The controlled access study behind Jessa et al., Nature Genetics 2022, on cell lineages in midline glioma. Access through an EGA data access committee.</span></a></li>
+<li><a href="https://pdc.cancer.gov/pdc/browse" target="_blank" rel="noopener"><span class="rname">CPTAC pediatric brain tumor proteogenomics</span><span class="rdesc">Proteome and phosphoproteome with matched genome and transcriptome for 218 pediatric brain tumours, 25 of them high grade glioma. Processed data open through the Proteomic Data Commons.</span></a></li>
+<li><a href="https://portal.kidsfirstdrc.org/" target="_blank" rel="noopener"><span class="rname">OpenPBTA and the CBTN cohort</span><span class="rdesc">Harmonized genome and transcriptome for 1,074 pediatric brain tumours including H3 K27M altered DMG, analysable in the cloud through the Kids First portal.</span></a></li>
+<li><a href="https://www.molecularneuropathology.org/mnp/" target="_blank" rel="noopener"><span class="rname">CNS tumour methylation reference cohort</span><span class="rdesc">The reference set behind DNA methylation classification, including the DMG K27 class. The classifier runs online; reference data are requested from the authors.</span></a></li>
+<li><a href="https://depmap.org/portal/" target="_blank" rel="noopener"><span class="rname">DepMap and the pediatric dependency map</span><span class="rdesc">CRISPR and RNAi dependency data across cancer cell lines, with a pediatric panel of 82 lines. H3 K27M primary cultures are poorly represented, which is a limitation worth knowing before using it for DMG.</span></a></li>
+</ul></section>
+
+<section class="rgroup"><h3>Search the archives for DMG data</h3><ul class="rlist">
+<li><a href="https://www.ncbi.nlm.nih.gov/gds/?term=diffuse+midline+glioma" target="_blank" rel="noopener"><span class="rname">GEO</span><span class="rdesc">Gene expression, single cell and methylation series. Most published DMG transcriptomic data lands here under a GSE accession.</span></a></li>
+<li><a href="https://ega-archive.org/studies" target="_blank" rel="noopener"><span class="rname">European Genome-phenome Archive</span><span class="rdesc">Controlled access human sequence data, including several DMG cohorts. Access needs a data access committee application.</span></a></li>
+<li><a href="https://www.ebi.ac.uk/pride/archive?keyword=glioma" target="_blank" rel="noopener"><span class="rname">PRIDE</span><span class="rdesc">Raw and processed mass spectrometry. Proteomic and PTM datasets appear here under a PXD accession.</span></a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/gap/?term=glioma" target="_blank" rel="noopener"><span class="rname">dbGaP</span><span class="rdesc">Controlled access genotype and sequence data from US funded studies, under phs accessions.</span></a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/sra/?term=diffuse+intrinsic+pontine+glioma" target="_blank" rel="noopener"><span class="rname">Sequence Read Archive</span><span class="rdesc">Raw sequencing reads where authors have deposited them openly.</span></a></li>
+<li><a href="https://zenodo.org/search?q=diffuse%20midline%20glioma" target="_blank" rel="noopener"><span class="rname">Zenodo</span><span class="rdesc">Code, processed matrices, figures and other outputs that have no journal or archive home, each with a DOI.</span></a></li>
+</ul></section>
+
+<p class="note" style="margin-top:18px">If you publish a DMG dataset and want its accession listed here, send it and it will be added with a line on what it contains and how access works.</p>
 </div></section>
 
 <section class="block" id="latest"><div class="wrap">
@@ -121,7 +168,7 @@ a { color: var(--accent); }
 <h2>Open trials</h2>
 <p class="note">Interventional studies open or opening to accrual that list diffuse midline glioma or diffuse intrinsic pontine glioma among their conditions. Each row links to its ClinicalTrials.gov record, which is the authoritative source for eligibility and sites.</p>
 <div class="controls" id="filters"></div>
-<div class="controls"><input type="search" id="q" placeholder="Search by agent, sponsor or NCT number" aria-label="Search trials"><span class="count" id="count"></span></div>
+<div class="controls"><input type="search" id="q" placeholder="Search by agent, sponsor or NCT number" aria-label="Search trials"><button class="chip" type="button" id="csv">Download CSV</button><span class="count" id="count"></span></div>
 <div class="tablewrap"><table>
 <thead><tr><th>Study</th><th>Phase</th><th>Approach</th><th>Sponsor</th><th>Status</th><th>Record</th></tr></thead>
 <tbody id="rows"><tr><td colspan="6" class="empty">Loading the trial table.</td></tr></tbody>
@@ -805,6 +852,27 @@ function buildFilters() {
   });
 }
 $('q').addEventListener('input', renderTrials);
+
+function visibleTrials() {
+  const term = $('q').value.trim().toLowerCase();
+  return TRIALS
+    .filter(t => active === 'All' || t.cat === active)
+    .filter(t => !term || ((t.name || '') + ' ' + (t.sponsor || '') + ' ' + (t.id || '') + ' ' + (t.note || '')).toLowerCase().includes(term));
+}
+$('csv').addEventListener('click', () => {
+  const cols = ['id', 'name', 'phase', 'cat', 'sponsor', 'status', 'note'];
+  const head = ['NCT number', 'Study', 'Phase', 'Approach', 'Sponsor', 'Status', 'Note', 'Record'];
+  const cell = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+  const rows = visibleTrials().map(t => cols.map(c => cell(t[c])).concat(cell('https://clinicaltrials.gov/study/' + t.id)).join(','));
+  const csv = '\ufeff' + [head.map(cell).join(',')].concat(rows).join('\r\n');
+  const stamp = new Date().toISOString().slice(0, 10);
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'dmg-trials-' + stamp + '.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+});
 
 function renderFeed(papers) {
   if (!papers.length) { $('feed').innerHTML = '<li class="empty">No new papers recorded yet. The next daily refresh will fill this in.</li>'; return; }
