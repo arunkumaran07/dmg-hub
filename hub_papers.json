@@ -1,0 +1,434 @@
+{
+"Disease biology and cell states": [
+{
+"a": "Barron",
+"y": "2025",
+"t": "GABAergic neuron-to-glioma synapses in diffuse midline gliomas",
+"j": "Nature",
+"p": "39972132",
+"d": "10.1038/s41586-024-08579-3"
+},
+{
+"a": "Mbah",
+"y": "2024",
+"t": "Therapeutic targeting of differentiation-state dependent metabolic vulnerabilities in diffuse midline glioma",
+"j": "Nat Commun",
+"p": "39419964",
+"d": "10.1038/s41467-024-52973-4"
+},
+{
+"a": "Spitzer",
+"y": "2024",
+"t": "Mutant IDH inhibitors induce lineage differentiation in IDH-mutant oligodendroglioma",
+"j": "Cancer Cell",
+"p": "38579724",
+"d": "10.1016/j.ccell.2024.03.008"
+},
+{
+"a": "Golbourn",
+"y": "2022",
+"t": "Loss of MAT2A compromises methionine metabolism and represents a vulnerability in H3K27M mutant glioma by modulating the epigenome",
+"j": "Nat Cancer",
+"p": "35422502",
+"d": "10.1038/s43018-022-00348-3"
+},
+{
+"a": "Jessa",
+"y": "2022",
+"t": "K27M in canonical and noncanonical H3 variants occurs in distinct oligodendroglial cell lineages in brain midline gliomas",
+"j": "Nat Genet",
+"p": "36471070",
+"d": "10.1038/s41588-022-01205-w"
+},
+{
+"a": "Liu",
+"y": "2022",
+"t": "The landscape of tumor cell states and spatial organization in H3-K27M mutant diffuse midline glioma across age and location",
+"j": "Nat Genet",
+"p": "36471067",
+"d": "10.1038/s41588-022-01236-3"
+},
+{
+"a": "Pal",
+"y": "2022",
+"t": "A druggable addiction to de novo pyrimidine biosynthesis in diffuse midline glioma",
+"j": "Cancer Cell",
+"p": "35985342",
+"d": "10.1016/j.ccell.2022.07.012"
+},
+{
+"a": "Panditharatna",
+"y": "2022",
+"t": "BAF Complex Maintains Glioma Stem Cells in Pediatric H3K27M Glioma",
+"j": "Cancer Discov",
+"p": "36305736",
+"d": "10.1158/2159-8290.CD-21-1491"
+},
+{
+"a": "Chung",
+"y": "2020",
+"t": "Integrated Metabolic and Epigenomic Reprograming by H3K27M Mutations in Diffuse Intrinsic Pontine Gliomas",
+"j": "Cancer Cell",
+"p": "32795401",
+"d": "10.1016/j.ccell.2020.07.008"
+},
+{
+"a": "Jessa",
+"y": "2019",
+"t": "Stalled developmental programs at the root of pediatric brain tumors",
+"j": "Nat Genet",
+"p": "31768071",
+"d": "10.1038/s41588-019-0531-7"
+},
+{
+"a": "Venkatesh",
+"y": "2019",
+"t": "Electrical and synaptic integration of glioma into neural circuits",
+"j": "Nature",
+"p": "31534222",
+"d": "10.1038/s41586-019-1563-y"
+},
+{
+"a": "Filbin",
+"y": "2018",
+"t": "Developmental and oncogenic programs in H3K27M gliomas dissected by single-cell RNA-seq",
+"j": "Science",
+"p": "29674595",
+"d": "10.1126/science.aao4750"
+},
+{
+"a": "Hoffman",
+"y": "2018",
+"t": "Clinical, Radiologic, Pathologic, and Molecular Characteristics of Long-Term Survivors of Diffuse Intrinsic Pontine Glioma (DIPG): A Collaborative Report From the International and European Society for Pediatric Oncology DIPG Registries",
+"j": "J Clin Oncol",
+"p": "29746225",
+"d": "10.1200/JCO.2017.75.9308"
+},
+{
+"a": "Mackay",
+"y": "2017",
+"t": "Integrated Molecular Meta-Analysis of 1,000 Pediatric High-Grade and Diffuse Intrinsic Pontine Glioma",
+"j": "Cancer Cell",
+"p": "28966033",
+"d": "10.1016/j.ccell.2017.08.017"
+},
+{
+"a": "Nagaraja",
+"y": "2017",
+"t": "Transcriptional Dependencies in Diffuse Intrinsic Pontine Glioma",
+"j": "Cancer Cell",
+"p": "28434841",
+"d": "10.1016/j.ccell.2017.03.011"
+}
+],
+"Clinical trials and approved therapy": [
+{
+"a": "Nobre",
+"y": "2026",
+"t": "Tumor-derived cell-free DNA detected in cerebrospinal fluid enables minimally invasive profiling of pediatric brain tumors",
+"j": "J Clin Invest",
+"p": "42294888",
+"d": "10.1172/JCI197391"
+},
+{
+"a": "Gallitto",
+"y": "2025",
+"t": "Targeted delivery of napabucasin with radiotherapy improves outcomes in diffuse midline glioma",
+"j": "Neuro Oncol",
+"p": "39394920",
+"d": "10.1093/neuonc/noae215"
+},
+{
+"a": "Mayr",
+"y": "2025",
+"t": "Effective targeting of PDGFRA-altered high-grade glioma with avapritinib",
+"j": "Cancer Cell",
+"p": "40086436",
+"d": "10.1016/j.ccell.2025.02.018"
+},
+{
+"a": "Vitanza",
+"y": "2025",
+"t": "Intracerebroventricular B7-H3-targeting CAR T cells for diffuse intrinsic pontine glioma: a phase 1 trial",
+"j": "Nat Med",
+"p": "39775044",
+"d": "10.1038/s41591-024-03451-3"
+},
+{
+"a": "Wu",
+"y": "2025",
+"t": "Blood-brain barrier opening with neuronavigation-guided focused ultrasound in pediatric patients with diffuse midline glioma",
+"j": "Sci Transl Med",
+"p": "41223245",
+"d": "10.1126/scitranslmed.adq6645"
+},
+{
+"a": "Arrillaga-Romany",
+"y": "2024",
+"t": "ONC201 (Dordaviprone) in Recurrent H3 K27M-Mutant Diffuse Midline Glioma",
+"j": "J Clin Oncol",
+"p": "38335473",
+"d": "10.1200/JCO.23.01134"
+},
+{
+"a": "Monje",
+"y": "2024",
+"t": "Intravenous and intracranial GD2-CAR T cells for H3K27Mdiffuse midline gliomas",
+"j": "Nature",
+"p": "39537919",
+"d": "10.1038/s41586-024-08171-9"
+},
+{
+"a": "Koschmann",
+"y": "2023",
+"t": "A road map for the treatment of pediatric diffuse midline glioma",
+"j": "Cancer Cell",
+"p": "38039965",
+"d": "10.1016/j.ccell.2023.11.002"
+},
+{
+"a": "Venneti",
+"y": "2023",
+"t": "Clinical Efficacy of ONC201 in H3K27M-Mutant Diffuse Midline Gliomas Is Driven by Disruption of Integrated Metabolic and Epigenetic Pathways",
+"j": "Cancer Discov",
+"p": "37584601",
+"d": "10.1158/2159-8290.CD-23-0131"
+},
+{
+"a": "Cantor",
+"y": "2022",
+"t": "Serial H3K27M cell-free tumor DNA (cf-tDNA) tracking predicts ONC201 treatment response and progression in diffuse midline glioma",
+"j": "Neuro Oncol",
+"p": "35137228",
+"d": "10.1093/neuonc/noac030"
+},
+{
+"a": "Souweidane",
+"y": "2018",
+"t": "Convection-enhanced delivery for diffuse intrinsic pontine glioma: a single-centre, dose-escalation, phase 1 trial",
+"j": "Lancet Oncol",
+"p": "29914796",
+"d": "10.1016/S1470-2045(18)30322-X"
+}
+],
+"Proteomics, PTMs and spatial profiling": [
+{
+"a": "Collot",
+"y": "2026",
+"t": "IGSF11-VISTA is a critical and targetable immune checkpoint axis in diffuse midline glioma",
+"j": "Cancer Cell",
+"p": "41576930",
+"d": "10.1016/j.ccell.2025.12.020"
+},
+{
+"a": "Anguraj Vadivel",
+"y": "2025",
+"t": "The proteomic landscape of diffuse midline glioma highlights the therapeutic potential of non-histone protein methyltransferases",
+"j": "Neuro Oncol",
+"p": "39954016",
+"d": "10.1093/neuonc/noaf033"
+},
+{
+"a": "Erez",
+"y": "2025",
+"t": "Single-molecule systems for the detection and monitoring of plasma-circulating nucleosomes and oncoproteins in diffuse midline glioma",
+"j": "Cell Rep Med",
+"p": "39809263",
+"d": "10.1016/j.xcrm.2024.101918"
+},
+{
+"a": "Li",
+"y": "2025",
+"t": "Serum metabolic profiling enables diagnosis, prognosis, and monitoring for brainstem gliomas",
+"j": "Nat Commun",
+"p": "40603879",
+"d": "10.1038/s41467-025-61163-9"
+},
+{
+"a": "Piyadasa",
+"y": "2025",
+"t": "Multi-omic landscape of human gliomas from diagnosis to treatment and recurrence",
+"j": "Cancer Cell",
+"p": "41386224",
+"d": "10.1016/j.ccell.2025.11.006"
+},
+{
+"a": "Riviere-Cazaux",
+"y": "2025",
+"t": "A field resource for the glioma cerebrospinal fluid proteome: Impacts of resection and location on biomarker discovery",
+"j": "Neuro Oncol",
+"p": "39786485",
+"d": "10.1093/neuonc/noae277"
+},
+{
+"a": "Zhang",
+"y": "2025",
+"t": "Identification of small open reading frame-encoded peptides in glioma by an optimized proteomics strategy",
+"j": "Mol Cell Proteomics",
+"p": "40513780",
+"d": "10.1016/j.mcpro.2025.101016"
+},
+{
+"a": "Kim",
+"y": "2024",
+"t": "Integrated proteogenomic characterization of glioblastoma evolution",
+"j": "Cancer Cell",
+"p": "38215747",
+"d": "10.1016/j.ccell.2023.12.015"
+},
+{
+"a": "Yang",
+"y": "2024",
+"t": "Widespread stable noncanonical peptides identified by integrated analyses of ribosome profiling and ORF features",
+"j": "Nat Commun",
+"p": "38431639",
+"d": "10.1038/s41467-024-46240-9"
+},
+{
+"a": "Mund",
+"y": "2022",
+"t": "Deep Visual Proteomics defines single-cell identity and heterogeneity",
+"j": "Nat Biotechnol",
+"p": "35590073",
+"d": "10.1038/s41587-022-01302-5"
+},
+{
+"a": "Ouspenskaia",
+"y": "2022",
+"t": "Unannotated proteins expand the MHC-I-restricted immunopeptidome in cancer",
+"j": "Nat Biotechnol",
+"p": "34663921",
+"d": "10.1038/s41587-021-01021-3"
+},
+{
+"a": "Petralia",
+"y": "2020",
+"t": "Integrated Proteogenomic Characterization across Major Histological Types of Pediatric Brain Cancer",
+"j": "Cell",
+"p": "33242424",
+"d": "10.1016/j.cell.2020.10.044"
+},
+{
+"a": "Mount",
+"y": "2018",
+"t": "Potent antitumor efficacy of anti-GD2 CAR T cells in H3-K27Mdiffuse midline gliomas",
+"j": "Nat Med",
+"p": "29662203",
+"d": "10.1038/s41591-018-0006-x"
+}
+],
+"Data resources, models and AI": [
+{
+"a": "Abramson",
+"y": "2024",
+"t": "Accurate structure prediction of biomolecular interactions with AlphaFold 3",
+"j": "Nature",
+"p": "38718835",
+"d": "10.1038/s41586-024-07487-w"
+},
+{
+"a": "Bunne",
+"y": "2024",
+"t": "How to build the virtual cell with artificial intelligence: Priorities and opportunities",
+"j": "Cell",
+"p": "39672099",
+"d": "10.1016/j.cell.2024.11.015"
+},
+{
+"a": "Cui",
+"y": "2024",
+"t": "scGPT: toward building a foundation model for single-cell multi-omics using generative AI",
+"j": "Nat Methods",
+"p": "38409223",
+"d": "10.1038/s41592-024-02201-0"
+},
+{
+"a": "Shapiro",
+"y": "2023",
+"t": "OpenPBTA: The Open Pediatric Brain Tumor Atlas",
+"j": "Cell Genom",
+"p": "37492101",
+"d": "10.1016/j.xgen.2023.100340"
+},
+{
+"a": "Theodoris",
+"y": "2023",
+"t": "Transfer learning enables predictions in network biology",
+"j": "Nature",
+"p": "37258680",
+"d": "10.1038/s41586-023-06139-9"
+},
+{
+"a": "Vermeulen",
+"y": "2023",
+"t": "Ultra-fast deep-learned CNS tumour classification during surgery",
+"j": "Nature",
+"p": "37821699",
+"d": "10.1038/s41586-023-06615-2"
+},
+{
+"a": "Pati",
+"y": "2022",
+"t": "Federated learning enables big data for rare cancer boundary detection",
+"j": "Nat Commun",
+"p": "36470898",
+"d": "10.1038/s41467-022-33407-5"
+},
+{
+"a": "Replogle",
+"y": "2022",
+"t": "Mapping information-rich genotype-phenotype landscapes with genome-scale Perturb-seq",
+"j": "Cell",
+"p": "35688146",
+"d": "10.1016/j.cell.2022.05.013"
+},
+{
+"a": "Dharia",
+"y": "2021",
+"t": "A first-generation pediatric cancer dependency map",
+"j": "Nat Genet",
+"p": "33753930",
+"d": "10.1038/s41588-021-00819-w"
+},
+{
+"a": "Karlsson",
+"y": "2021",
+"t": "A single-cell type transcriptomics map of human tissues",
+"j": "Sci Adv",
+"p": "34321199",
+"d": "10.1126/sciadv.abh2169"
+},
+{
+"a": "Rieke",
+"y": "2020",
+"t": "The future of digital health with federated learning",
+"j": "NPJ Digit Med",
+"p": "33015372",
+"d": "10.1038/s41746-020-00323-1"
+},
+{
+"a": "Capper",
+"y": "2018",
+"t": "DNA methylation-based classification of central nervous system tumours",
+"j": "Nature",
+"p": "29539639",
+"d": "10.1038/nature26000"
+},
+{
+"a": "Tsherniak",
+"y": "2017",
+"t": "Defining a Cancer Dependency Map",
+"j": "Cell",
+"p": "28753430",
+"d": "10.1016/j.cell.2017.06.010"
+},
+{
+"a": "Uhl\u00e9n",
+"y": "2015",
+"t": "Proteomics. Tissue-based map of the human proteome",
+"j": "Science",
+"p": "25613900",
+"d": "10.1126/science.1260419"
+}
+]
+}
